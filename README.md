@@ -1,6 +1,6 @@
 # Wazuh Email Integration Script
 
-Este script está diseñado para integrarse con Wazuh para enviar alertas por correo electrónico con autenticación. Reemplaza el demonio maild predeterminado con este script
+Este script está diseñado para integrarse con Wazuh para enviar alertas por correo electrónico con autenticación. Reemplaza el demonio maild predeterminado 
 ## Instalación
 
 Siga estos pasos para instalar y configurar el script:
