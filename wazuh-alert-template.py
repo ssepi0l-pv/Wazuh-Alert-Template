@@ -15,11 +15,18 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+try:
+    with open('creds', r) as creds: # cambiar 'creds' por archivo que contenga las credenciales
+    lines = creds.readlines()
+    smtp_username = lines[0].rstrip() # linea 1 debe ser correo/usuario
+    smtp_password = lines[1].rstrip() # linea 2 debe ser contrasena
+except OSError:
+    print("credential file does not exist!")
+
 # Configuración SMTP de Gmail
 smtp_server = "smtp.gmail.com"
 smtp_port = 587
-smtp_username = "testing.wazuh.geocom@gmail.com"  # Reemplaza con tu dirección de correo de Gmail
-smtp_password = "fgliyctgzonyvhiv"  # Reemplaza con tu contraseña de Gmail
+
 
 def generate_html(alert):
     """
